@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
                 ('phone', models.CharField(max_length=10)),
                 ('address', models.TextField()),
                 ('commodities', models.TextField(verbose_name='What you can contribute')),
+                ('blood_group', models.TextField()),
             ],
         ),
     ]
