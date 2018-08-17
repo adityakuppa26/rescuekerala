@@ -65,7 +65,7 @@ class RegisterNGO(CreateView):
 
 class RegisterContributor(CreateView):
     model = Contributor
-    fields = ['name', 'district', 'phone', 'address',  'commodities']
+    fields = ['name', 'district', 'phone', 'address',  'commodities','blood_group']
     success_url = '/contrib_success/'
 
 
