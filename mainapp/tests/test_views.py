@@ -169,7 +169,7 @@ class RegisterContributorViewTests(TestCase):
             'district': 'pkd',
             'phone': '8893845901',
             'address': 'Near Mosque',
-            'commodities': 'Shirts, Torches'
+            'commodities': 'Shirts, Torches',
             'blood_group': 'A+'
         }
         response = client.post(self.url, post_data)
