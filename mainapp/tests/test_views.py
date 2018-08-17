@@ -158,7 +158,7 @@ class RegisterContributorViewTests(TestCase):
         response = client.post(self.url, post_data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'mainapp/contributor_form.html')
-        req_fields = ['name', 'district', 'phone', 'address', 'commodities']
+        req_fields = ['name', 'district', 'phone', 'address', 'commodities', 'blood_group']
         for field in req_fields:
             self.assertFormError(response, 'form', field, 'This field is required.')
 
@@ -170,6 +170,7 @@ class RegisterContributorViewTests(TestCase):
             'phone': '8893845901',
             'address': 'Near Mosque',
             'commodities': 'Shirts, Torches'
+            'blood_group': 'A+'
         }
         response = client.post(self.url, post_data)
         self.assertEqual(response.status_code, 302)
@@ -178,4 +179,5 @@ class RegisterContributorViewTests(TestCase):
         self.assertEqual(contributor.name, 'Rag Sagar')
         self.assertEqual(contributor.district, 'pkd')
         self.assertEqual(contributor.phone, '8893845901')
+        self.assertEqual(contributor.blood_group, 'A+')
         self.assertEqual(contributor.address, 'Near Mosque')
