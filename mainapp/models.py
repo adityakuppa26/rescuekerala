@@ -51,6 +51,17 @@ gender =(
     (2,'Others')
 )
 
+blood_group = (
+    ('A+','A+'),
+    ('A-','A-'),
+    ('O+','O+'),
+    ('AB+','AB+'),
+    ('AB-','AB-'),
+    ('O-','O-'),
+    ('B+','B+'),
+    ('B-','B-')
+)
+
 class Request(models.Model):
     district = models.CharField(
         max_length = 15,
@@ -165,7 +176,10 @@ class Contributor(models.Model):
     phone = models.CharField(max_length=10)
     address = models.TextField()
     commodities = models.TextField(verbose_name="What you can contribute. ( സംഭാവന ചെയ്യാന്‍ ഉദ്ദേശിക്കുന്ന സാധനങ്ങള്‍ ) -- Eg: Shirts, torches etc ")
-    blood_group=models.CharField(max_length=10)
+    blood_group=models.CharField(
+        max_length=5,
+        choices=blood_group,
+    )
     status = models.CharField(
         max_length = 10,
         choices = contrib_status_types,
