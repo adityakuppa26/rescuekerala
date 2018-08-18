@@ -165,7 +165,7 @@ class Contributor(models.Model):
     phone = models.CharField(max_length=10)
     address = models.TextField()
     commodities = models.TextField(verbose_name="What you can contribute. ( സംഭാവന ചെയ്യാന്‍ ഉദ്ദേശിക്കുന്ന സാധനങ്ങള്‍ ) -- Eg: Shirts, torches etc ")
-    blood_group=models.TextField()
+    blood_group=models.CharField(max_length=10)
     status = models.CharField(
         max_length = 10,
         choices = contrib_status_types,
